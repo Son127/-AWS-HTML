@@ -1,0 +1,20 @@
+.text1{
+    display: inline-block;
+    /*border은 전체 픽셀을 지정해주고 밑에서 바꿔준다.*/
+    border: 1px solid black;
+    border-width: 10px 3px 2px 1px;
+    margin: 10px;
+    padding: 5px;
+    width: 100px;
+    height: 100px;
+}
+.box1{
+    display: inline-block;
+    box-sizing: border-box; /*기본값은 content박스다.*/
+     /*블럭라벨 요소는 좌우로 마진 안먹음 사이즈는 마진 제외하고 나옴*/
+    margin: 10px;
+    border: 1px solid black;
+    padding: 5px;
+    width: 100px;
+    height: 100px;
+}
