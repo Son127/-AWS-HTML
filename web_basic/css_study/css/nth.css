@@ -1,0 +1,11 @@
+
+/* 부모안에 자식 요소 중  n번째 
+위치번호도 동일해야하고 
+*/
+h2:nth-child(2){
+    color: red;
+}
+/* 부모요소 안에서 h1들 중에서 n번째 */
+h1:nth-of-type(2){
+    color: blue;
+}

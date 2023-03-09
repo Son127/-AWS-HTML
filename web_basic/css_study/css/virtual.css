@@ -1,0 +1,38 @@
+.username-input{
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #161515;
+    height: 30px;
+
+}
+.username-input:active{
+    background-color: #fafafa;
+}
+/* FOCUS -웹 요소에 초점이 맞추어졌을 때의 스타일 적용 */
+.username-input:focus{
+    border-bottom: 2px solid #121212;
+}
+.username-input:disabled{
+    background-color: #dbdbdb;
+}
+
+.ok-button{
+    height: 30px;
+    width: 50px;
+    border: 1px solid #dbdbdb;
+    background-color: #fafafa;
+}
+
+/* :hover - 웹 요소에 마우스 커서를 올려놓을 때의 스타일 적용 */
+.ok-button:not(:disabled):hover{
+    border-color: white ;
+    background-color: dodgerblue;
+}
+
+.ok-button::not(:disabled):active{
+    background-color: #eee;
+}
+
+.ok-button:disabled{
+    background-color: red;
+}

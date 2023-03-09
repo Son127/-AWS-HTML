@@ -1,0 +1,16 @@
+/* 하위 선택자 */
+main article section label{
+    color: blue;
+}
+/* 자식 선택자 */
+main article section > input{
+    border: 3px solid red;
+}
+/* 인접형제 선택자 */
+main article section h1 + label{
+    color: blueviolet;
+}
+/* 형제 선택자 */
+main article  div h2 ~ label{
+    color: aqua;
+}

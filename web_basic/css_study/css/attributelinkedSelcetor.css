@@ -1,0 +1,35 @@
+/*  */
+input[type]{
+    border:  3px solid firebrick;
+}
+
+input[type = password]{
+    border: 3px solid blue;
+}
+/*[속성~=값] 선택자
+* 여러 속성 값 중에 해당 값이 포함되어 있는 요소를 찾아 스타일 적용
+* class에 -이 없으면 
+*/
+input[class~= input]{
+background-color: black;
+color: aliceblue;
+}
+/* [속성 |=  값] 선택자
+* 특정 값이 포함된 속성을 가진 요소를 찾아 스타일 적용
+* 하이픈(-)으로 연결해 한 단어 값을 이루는 요소에도 적용
+*/
+input[class |= input]{
+background-color: black;
+color: aliceblue;
+}
+
+
+
+
+
+/* 정규식
+
+^ 값의 시작
+$ 값의 끝
+
+*/
