@@ -1,0 +1,167 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+a{
+    color: #121212;
+    text-decoration: none;
+}
+
+.main-header{
+    display: flex;
+    justify-content: center;
+    background-color: #121212;
+}
+
+.menu-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* align-items: stretch; */
+    /* margin: 0px auto;  header에 flex준거랑 같음*/
+    width: 1024px;
+    padding: 0px 22px;
+    height: 44px;
+    font-size: 12px;
+    color: #fafafa;
+}
+
+.menu-nav > li {
+    display: flex;
+    align-items: center;
+    padding: 0px 9px;
+    height: 100%;
+    cursor: pointer;
+}
+.sub-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 0px auto;
+    padding: 0px 22px;
+    width: 1024px;
+    height: 52px;
+}
+.sub-nav{
+    display: inline-flex;
+    align-items: center;
+    font-size: 12px;
+}
+.sub-title{
+    margin: 0px;
+    font-size: 21px;
+
+}
+.sub-nav > a{
+    margin: 0px 5px;
+    padding: 0px 5px;
+}
+.event{
+    display: flex;
+
+}
+.content-wrapper{
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.event-title{
+    display: flex;
+    justify-content: space-between;
+    width: 1024px;
+    height: 54px;
+
+    font-size: 16px;
+    background-color: rgb(233, 230, 230);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+a{
+    
+}
+.main-header{
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+}
+.menu-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1024px;
+    height: 44px;
+    font-size: 12px;
+}
+.menu-nav > li{
+    padding: 0px 9px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+} */
