@@ -6,7 +6,7 @@
 
 const naverButton = document.getElementsByTagName("button")
 naverButton[0].onclick = () =>{
-    // location.herf = "http://www.naver.com";
+    // location.href = "http://www.naver.com";
     location.replace("http://www.naver.com");
 }
 
