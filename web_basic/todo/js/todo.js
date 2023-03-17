@@ -12,8 +12,11 @@ class TodoEvent {
         const addTodoButton = document.querySelector(".add-todo-button");
         addTodoButton.onclick = () => {
             TodoService.getInstance().addTodo();
+            const todoInput = document.querySelector(".todo-input");
+            todoInput.value = "";
         }
     }
+    
     /*
     keyCode() == 13 은 enter
     */
@@ -23,12 +26,30 @@ class TodoEvent {
            if(window.event.keyCode == 13){
                const addTodoButton = document.querySelector(".add-todo-button");
                addTodoButton.click();
-               todoInput.value = "";
             }
         }
     }
 
+    addEventRemoveTodoClick() {
+        const removeButtons = document.querySelectorAll(".content-footer .remove-button");
+        removeButtons.forEach((removeButton, index) => {
+            removeButton.onclick = () => {
+                ModalService.getInstance().showRemoveModal(index);
+            }
+        });
+    }
+
+    addEventModifyTodoClick() {
+        const modifyButtons  = document.querySelectorAll(".content-footer .modify-button");
+        modifyButtons.forEach((modifyButton, index) => {
+            modifyButton.onclick = () => {
+                ModalService.getInstance().showModifyModal(index);
+            } 
+        })
+    }
 }
+
+
 
 
 
@@ -51,6 +72,11 @@ class TodoService {
         }else{
             this.todoList = JSON.parse(localStorage.getItem("todoList")); // parse : json을 자바객체로 바까줌
         }
+        this.loadTodoList();
+    }
+
+    updateLocalStorage() {
+        localStorage.setItem("todoList", JSON.stringify(this.todoList));
         this.loadTodoList();
     }
 
@@ -81,8 +107,7 @@ class TodoService {
         }
 
         this.todoList.push(todoObj);
-        localStorage.setItem("todoList", JSON.stringify(this.todoList));
-        this.loadTodoList();
+        this.updateLocalStorage();
     }
 
     loadTodoList() {
@@ -92,23 +117,27 @@ class TodoService {
         this.todoList.forEach(todoObj => {
             todoContentList.innerHTML += `
                 <li class="content-container">
-                <div class="content-header">
-                    <div class="todo-date">${todoObj.todoDate}</div>
-                    <div class="todo-date-time">${todoObj.todoDateTime}</div>
-                </div>
-                <div class="content-main">
-                    ${todoObj.todoContent}
-                </div>         
-                <div class="content-footer">
-                    <button class="modify-button">
-                        <i class="fa-regular fa-pen-to-square"></i>
-                    </button>
-                    <button class="remove-button">
-                        <i class="fa-regular fa-trash-can"></i>
-                    </button>
-                </div> 
-            </li>
+                    <div class="content-header">
+                        <div class="todo-date">${todoObj.todoDate}</div>
+                        <div class="todo-date-time">${todoObj.todoDateTime}</div>
+                    </div>
+                    <div class="content-main">
+                        ${todoObj.todoContent}
+                    </div>         
+                    <div class="content-footer">
+                        <button class="modify-button">
+                            <i class="fa-regular fa-pen-to-square"></i>
+                        </button>
+                        <button class="remove-button">
+                            <i class="fa-regular fa-trash-can"></i>
+                        </button>
+                    </div> 
+                </li>
         `;
         });
+        TodoEvent.getInstance().addEventRemoveTodoClick();
+        TodoEvent.getInstance().addEventModifyTodoClick();
+        
     }
+
 }
