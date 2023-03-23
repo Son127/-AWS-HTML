@@ -27,7 +27,7 @@ class ModalEvent {
         const modalOkButton= document.querySelector(".modal-ok-button");
         modalOkButton.onclick = () => {
             const todoModifyInput = document.querySelector(".todo-modify-input")
-            TodoService.getInstance().todoList[modifyIndex].todoContent = todoModifyInput;
+            TodoService.getInstance().todoList[modifyIndex].todoContent = todoModifyInput.value;
             TodoService.getInstance().updateLocalStorage();
             ModalService.getInstance().cloesModal();
         }
